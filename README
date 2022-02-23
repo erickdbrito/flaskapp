@@ -1,0 +1,55 @@
+## Run Flask Application
+
+Step 1: Build docker image
+
+```
+sudo docker build -t flaskapp
+```
+
+Step 2: Create and start a container for flask application
+
+```
+sudo docker run -d -p 5000:5000 --name flask_app flaskapp
+```
+
+Step 3: Navigate to your browser and confirm the application is reachable
+
+```
+http://<flask_vm_ip>:5000
+```
+
+## Endpoints
+
+GET /
+
+Response 200
+
+```
+{
+	"Hello": "World"
+}
+```
+
+GET /persons
+
+
+Body Json Payload
+```
+{
+	"name": "Erick",
+	"username": "Brito",
+	"age" : 100
+}
+```
+
+Response 200
+
+```
+{
+	"id": "3f94f4bd-0c93-4e26-89b2-5498c292a4d3",
+	"name": "Erick",
+	"username": "Brito",
+	"age": 100,
+	"user_ip": "172.17.0.1"
+}
+```
